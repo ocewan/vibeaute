@@ -10,15 +10,9 @@ class PageController extends Controller
         $this->render("pages/home");
     }
 
-    public function about()
-    {
-        echo "This is the about page.";
-    }
-
     public function contact()
     {
-        echo "Feel free to contact us!";
+        echo "<h1>Contactez nous !</h1>";
     }
-
 
 }
