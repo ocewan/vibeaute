@@ -2,6 +2,8 @@
 
 namespace App\Routing;
 
+use App\Controller\ErrorController;
+
 class Router 
 {
     private $routes;
@@ -25,11 +27,21 @@ class Router
         $controllerPath = $route['controller'];
         $action = $route['action'];
 
+        if (!class_exists($controllerPath)) {
+            // Gérer le cas où le contrôleur n'existe pas en lançant une exception
+            throw new \Exception("Contrôleur non trouvé: $controllerPath");
+        }
+
         $controller = new $controllerPath();
+        if (!method_exists($controller, $action)) {
+            // Gérer le cas où l'action n'existe pas en lançant une exception
+            throw new \Exception("Action non trouvée: $action dans le contrôleur $controllerPath");
+        }
         $controller->$action();
         } catch (\Exception $e) {
-            // Gérer l'erreur en affichant un message d'erreur
-            echo $e->getMessage();
+            // En cas d'erreur, on utilise le ErrorController pour afficher un message d'erreur
+            $errorController = new ErrorController();
+            $errorController->show($e->getMessage());
         }
     }
 
