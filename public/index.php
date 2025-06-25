@@ -1,9 +1,10 @@
-<?php 
+<?php
 // chargement de l'autoload 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // définition de la constante APP_ROOT pour le chemin de l'app 
 define('APP_ROOT', dirname(__DIR__));
+define('APP_ENV', ".env");
 
 use App\Routing\Router;
 
