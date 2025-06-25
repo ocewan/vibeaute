@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   php-fpm:
-    image: php:8.2-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: php-fpm
     ports:
       - "9000:9000"
@@ -53,8 +55,7 @@ services:
       - "8080:80"
     environment:
       PMA_HOST: mysql
-      PMA_USER: ${MYSQL_USER}
-      PMA_PASSWORD: ${MYSQL_PASSWORD}
+      PMA_AUTH_TYPE: cookie
     depends_on:
       - mysql
 
