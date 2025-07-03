@@ -1,0 +1,25 @@
+.instagram {
+  background: $color-section;
+  padding: 0 0 40px 0;
+
+  .instagram-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+
+    .instagram-img img {
+      width: 173px;
+      height: 173px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

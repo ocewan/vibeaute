@@ -1,0 +1,55 @@
+footer {
+  background: linear-gradient(
+    0deg,
+    rgba(243, 215, 202, 1) 0%,
+    rgba(255, 249, 242, 1) 100%
+  );
+  padding: 40px 20px 20px;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .footer-column {
+        flex: 1 1 200px;
+        margin: 10px;
+
+        h4 {
+          margin-bottom: 15px;
+        }
+
+        ul {
+          @include footer-list;
+        }
+
+        .social-icons {
+          @include footer-social-icons;
+        }
+
+        // Infos alignées horizontalement
+        .footer-infos {
+          @include footer-infos-inline;
+        }
+
+        // Ajustements spécifiques à la 2e colonne (réseaux)
+        &:nth-child(2) {
+          .social-icons {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    border-top: 1px solid $color-primary;
+    padding-top: 15px;
+  }
+}

@@ -1,0 +1,137 @@
+// Bases 
+@media (max-width: 768px) {
+
+  p, a {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+}
+
+// Menu burger pour mobile
+@media screen and (max-width: 768px) {
+  .main-nav,
+  .rdv-btn {
+    display: none !important;
+  }
+
+  .burger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    position: static;
+    }
+
+  #mobile-nav.active .rdv-btn-mobile {
+    display: block;
+  }
+}
+
+// Section hero
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px;
+    margin: 40px 0 40px 0;
+
+
+    h1 {
+      .line1 {
+        margin-top: 20px;
+      }
+
+      .line2 {
+        top: 245px;
+
+        .mobile-break {
+          display: block;
+        }
+      }
+    }
+
+    .hero-btn {
+      top: 585px;
+    }
+
+    .home-img {
+      width: 240px;
+      height: 313px;
+    }
+
+    .img-container .bg-text {
+      font-size: 64px;
+    }
+  }
+}
+
+// section about
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
+
+    .about-content {
+      flex-direction: column;
+
+      .about-text,
+      .about-img {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .about-text a {
+        justify-content: center;
+      }
+
+      .about-img {
+        height: 360px; // optionnel : ajuste selon image
+      }
+
+      .about-img .about-img-bg {
+        width: 260px;
+        height: 300px;
+      }
+
+      .about-img img {
+        width: 260px;
+      }
+    }
+  }
+}
+
+// Section instagram
+
+@media (max-width: 768px) {
+  .instagram-img {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 16px;
+      padding: 10px;
+      min-width: max-content;
+    }
+  }
+}

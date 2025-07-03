@@ -1,35 +1,60 @@
-nav {
+.nav-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background 0.3s ease, height 0.3s ease;
+  z-index: 900;
+
+  &.scrolled {
+    background-color: rgba($color-bg, 30%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  &.menu-open {
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    
-    ul {
-        display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    z-index: 0;
 
-        li {
-            margin: 0 10px;
-
-            a {
-                text-decoration: none;
-                color: $color-text;
-                font-weight: bold;
-                letter-spacing: 2px;
-                font-family: $font-body;
-
-                &:hover {
-                    color: $color-primary;
-                }
-            }
-        }
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
     }
 
-    button {
-        @include button-rdv;
+    ul {
+      display: flex;
+
+      li {
+        margin: 0 10px;
+        padding: 0 10px;
 
         a {
-            text-decoration: none;
-            color: $color-text;
-            font-weight: bold;
+          text-decoration: none;
+          color: $color-text;
+          letter-spacing: 2px;
+          font-family: $font-body;
+
+          &:hover {
+            color: $color-primary;
+            transition: 0.3s ease;
+          }
         }
+      }
     }
+
+    .rdv-btn {
+      @include button-rdv;
+    }
+  }
 }
