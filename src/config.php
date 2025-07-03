@@ -22,11 +22,11 @@ $mongoPort = 27017;
 $mongoUser = getenv('MONGO_ROOT_USERNAME');
 $mongoPass = getenv('MONGO_ROOT_PASSWORD');
 
-try {
-    $mongoUri = "mongodb://$mongoUser:$mongoPass@$mongoHost:$mongoPort";
-    $mongoClient = new MongoDB\Client($mongoUri);
-    $mongoDb = $mongoClient->selectDatabase('vibeaute');
-    // echo "Connexion MongoDB réussie.";
-} catch (Exception $e) {
-    echo "Pas de connexion MongoDB : " . $e->getMessage();
-}
+// try {
+//     $mongoUri = "mongodb://$mongoUser:$mongoPass@$mongoHost:$mongoPort";
+//     $mongoClient = new MongoDB\Client($mongoUri);
+//     $mongoDb = $mongoClient->selectDatabase('vibeaute');
+//     // echo "Connexion MongoDB réussie.";
+// } catch (Exception $e) {
+//     echo "Pas de connexion MongoDB : " . $e->getMessage();
+// }
