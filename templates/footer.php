@@ -89,14 +89,52 @@
         navContainer.classList.remove("menu-open");
     });
 
-    // Animation de l'image dans la section "À propos"
-    window.addEventListener("scroll", () => {
-        const scrollValue = (window.scrollY + window.innerHeight) / document.body.offsetHeight;
+    // // Animation de l'image dans la section "À propos"
+    document.addEventListener("DOMContentLoaded", () => {
         const img = document.querySelector(".about-img-anim");
+        if (!img) return;
 
-        if (scrollValue > 0.32) {
-            img.classList.add("visible");
-        }
+        let hasAnimated = false;
+
+        window.addEventListener("scroll", () => {
+            if (hasAnimated) return;
+
+            const scrollValue = (window.scrollY + window.innerHeight) / document.body.offsetHeight;
+
+            if (scrollValue > 0.28) {
+                img.classList.add("visible");
+                hasAnimated = true;
+            }
+        });
+    });
+
+    // Animation générale des éléments
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('[data-anim]');
+
+        animatedElements.forEach((el, index) => {
+            const baseDelay = parseInt(el.dataset.animDelay) || 150;
+            el.dataset.delay = index * baseDelay;
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                const delay = parseInt(el.dataset.delay) || 0;
+
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        el.classList.add('is-visible');
+                    }, delay);
+                } else {
+                    el.classList.remove('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => observer.observe(el));
     });
 </script>
 

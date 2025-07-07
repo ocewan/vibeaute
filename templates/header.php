@@ -24,7 +24,7 @@
                 <!-- Nav desktop (visible uniquement >768px) -->
                 <ul class="main-nav">
                     <li><a href="/">ACCUEIL</a></li>
-                    <li><a href="/presta">PRESTATIONS</a></li>
+                    <li><a href="/prestations">PRESTATIONS</a></li>
                     <li><a href="/tarifs">TARIFS</a></li>
                     <li><a href="/contact">CONTACT</a></li>
                 </ul>
@@ -45,7 +45,7 @@
         <div id="mobile-nav">
             <ul>
                 <li><a href="/">ACCUEIL</a></li>
-                <li><a href="/presta">PRESTATIONS</a></li>
+                <li><a href="/prestations">PRESTATIONS</a></li>
                 <li><a href="/tarifs">TARIFS</a></li>
                 <li><a href="/contact">CONTACT</a></li>
             </ul>
