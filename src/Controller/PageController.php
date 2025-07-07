@@ -12,15 +12,21 @@ class PageController extends Controller
         $this->render("pages/home");
     }
 
+    public function prestations(): void
+    {
+        $this->render("pages/prestations");
+    }
+
     public function tarifs(): void
     {
-        $tarifRepository = new TarifRepository();
-        $tarifs = $tarifRepository->getAllTarifs();
-        $this->render("pages/tarifs", ["tarifs" => $tarifs]);
+        // $tarifRepository = new TarifRepository();
+        // $tarifs = $tarifRepository->getAllTarifs();
+        // $this->render("pages/tarifs", ["tarifs" => $tarifs]);
+        $this->render("pages/tarifs");
     }
 
     public function contact()
     {
-        echo "<h1>Contactez nous !</h1>";
+        $this->render("pages/contact");
     }
 }
