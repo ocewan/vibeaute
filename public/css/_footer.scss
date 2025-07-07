@@ -13,11 +13,10 @@ footer {
     .footer-columns {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-evenly;
       margin-bottom: 20px;
 
       .footer-column {
-        flex: 1 1 200px;
         margin: 10px;
 
         h4 {

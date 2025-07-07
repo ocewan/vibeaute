@@ -87,3 +87,23 @@
     pointer-events: all;
   }
 }
+
+// Responsive du menu burger pour mobile
+@media screen and (max-width: 768px) {
+
+  .main-nav,
+  .rdv-btn {
+    display: none !important;
+  }
+
+  .burger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    position: static;
+  }
+
+  #mobile-nav.active .rdv-btn-mobile {
+    display: block;
+  }
+}

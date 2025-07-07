@@ -1,0 +1,50 @@
+.prestations {
+  .prestations-header {
+    @include header-text;
+
+    .rdv-btn {
+      @include button-rdv;
+    }
+  }
+
+  .prestations-container {
+    .prestations-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 100px 0;
+
+      .text-item {
+        width: 50%;
+
+        .tarifs-btn {
+          @include button-cta;
+        }
+      }
+
+      .img-item {
+        img {
+          max-width: 400px;
+          border-bottom-left-radius: 350px;
+        }
+      }
+
+      &.reverse {
+        flex-direction: row-reverse;
+
+        .img-item {
+          img {
+            border-top-right-radius: 350px;
+          }
+        }
+      }
+    }
+  }
+  .banner-container {
+    @include banner;
+
+    .banner-btn {
+      @include button-cta;
+    }
+  }
+}

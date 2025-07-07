@@ -1,0 +1,21 @@
+.tarifs {
+
+    .tarifs-header {
+
+        .tarifs-header-text {
+            @include header-text;
+
+            .rdv-btn {
+                @include button-rdv;
+            }
+        }
+    }
+
+    .banner-container {
+        @include banner;
+
+        .banner-btn {
+            @include button-cta;
+        }
+    }
+}

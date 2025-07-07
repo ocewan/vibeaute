@@ -23,3 +23,29 @@
     }
   }
 }
+
+
+// Responsive de section instagram
+
+@media (max-width: 768px) {
+  .instagram-img {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 16px;
+      padding: 10px;
+      min-width: max-content;
+    }
+  }
+}

@@ -91,4 +91,36 @@
   }
 }
 
+// Responsive de section about
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
 
+    .about-content {
+      flex-direction: column;
+
+      .about-text,
+      .about-img {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .about-text a {
+        justify-content: center;
+      }
+
+      .about-img {
+        height: 360px;
+      }
+
+      .about-img .about-img-bg {
+        width: 260px;
+        height: 300px;
+      }
+
+      .about-img img {
+        width: 260px;
+      }
+    }
+  }
+}

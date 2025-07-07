@@ -50,10 +50,6 @@
     z-index: 3;
     transition: background-color 0.3s ease;
     @include button-cta;
-
-    &:hover {
-      background-color: $color-secondary;
-    }
   }
 
   .img-container {
@@ -84,5 +80,47 @@
     border-radius: 206px;
     position: relative;
     z-index: 2;
+
+    &:hover {
+      scale: 1.05;
+      transition: all 1.2s ease-out;
+    }
+  }
+}
+
+
+// Reponsive de section hero
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px;
+    margin: 40px 0 40px 0;
+
+
+    h1 {
+      .line1 {
+        margin-top: 20px;
+      }
+
+      .line2 {
+        top: 35%;
+
+        .mobile-break {
+          display: block;
+        }
+      }
+    }
+
+    .hero-btn {
+      top: 95%;
+    }
+
+    .home-img {
+      width: 240px;
+      height: 313px;
+    }
+
+    .img-container .bg-text {
+      font-size: 64px;
+    }
   }
 }
