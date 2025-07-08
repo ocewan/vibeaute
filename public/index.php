@@ -6,6 +6,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 define('APP_ROOT', dirname(__DIR__));
 define('APP_ENV', ".env");
 
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
 use App\Routing\Router;
 
 $router = new Router();
