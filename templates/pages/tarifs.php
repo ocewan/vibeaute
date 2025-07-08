@@ -5,20 +5,17 @@
         <h2>Tarifs</h2>
         <div class="tarifs-header-text">
             <p>Découvrez les tarifs des prestations proposées par votre prothésiste ongulaire Virginie</p>
-            <a href="https://www.planity.com/vibeaute-69410-champagne-au-mont-dor" class="rdv-btn">Prendre RDV<img src="/img/rdv.png" alt=""></a>
+            <a href="https://www.planity.com/vibeaute-69410-champagne-au-mont-dor" class="header-rdv-btn">Prendre RDV<img src="/img/rdv.png" alt=""></a>
         </div>
     </div>
     <div class="tarifs-container">
-        <div class="tarif-item">
-            <h3>Manucure</h3>
-            <p>À partir de 20€</p>
-            <p>Un soin complet pour vos mains et ongles.</p>
-        </div>
-        <div class="tarif-item">
-            <h3>Pose de vernis semi-permanent</h3>
-            <p>À partir de 30€</p>
-            <p>Un vernis qui dure jusqu'à 3 semaines.</p>
-        </div>
+        <?php foreach ($tarifs as $tarif): ?>
+            <div class="box">
+                <h3><?= htmlspecialchars($tarif->getCategory()) ?></h3>
+                <p><?= htmlspecialchars($tarif->getTitle()) ?></p>
+                <span><?= number_format($tarif->getPrice(), 2, ',', ' ') ?> €</span>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <div class="banner-container">

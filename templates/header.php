@@ -1,3 +1,11 @@
+<?php
+
+use App\Repository\ReviewRepository;
+
+$repo = new ReviewRepository();
+$reviews = $repo->getAll(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

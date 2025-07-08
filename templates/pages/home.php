@@ -137,23 +137,37 @@
 </section>
 
 <!-- Section avis clients -->
-<section class="avis">
-    <h2>Avis clients</h2>
-    <div class="avis-container">
-        <div class="avis-card">
-            <p>"Virginie est très professionnelle et à l'écoute. Je suis ravie de mes ongles !"</p>
-            <span>- Camille</span>
+
+<section id="reviews" class="carousel-section">
+    <h2>AVIS CLIENTS</h2>
+
+    <div class="carousel-controls">
+        <button class="carousel-arrow left" onclick="scrollCarousel(-1)">‹</button>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-inner" id="carousel-inner">
+                <?php foreach ($reviews as $review): ?>
+                    <div class="carousel-card">
+                        <div class="review-meta"><?= htmlspecialchars($review['name']) ?></div>
+                        <p class="review-title"><?= htmlspecialchars($review['title']) ?></p>
+                        <p class="review-message"><?= nl2br(htmlspecialchars($review['message'])) ?></p>
+                        <div class="review-stars">
+                            <?php
+                            $rating = intval($review['rating'] ?? 0);
+                            echo str_repeat('★', $rating) . str_repeat('☆', 5 - $rating);
+                            ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
-        <div class="avis-card">
-            <p>"Un moment de détente incroyable, je recommande vivement Vi' Beauté !"</p>
-            <span>- Sophie</span>
-        </div>
-        <div class="avis-card">
-            <p>"Des ongles magnifiques et une ambiance chaleureuse, merci Virginie !"</p>
-            <span>- Laura</span>
-        </div>
+
+        <button class="carousel-arrow right" onclick="scrollCarousel(1)">›</button>
     </div>
 </section>
+
+
+
 
 <!-- Formulaire de contact -->
 <section class="contact">
