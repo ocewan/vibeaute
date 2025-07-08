@@ -19,8 +19,8 @@ class PageController extends Controller
 
     public function tarifs(): void
     {
-        // $tarifRepository = new TarifRepository();
-        // $tarifs = $tarifRepository->getAllTarifs();
+        $tarifRepository = new TarifRepository();
+        $tarifs = $tarifRepository->getAllTarifs();
         // $this->render("pages/tarifs", ["tarifs" => $tarifs]);
         $this->render("pages/tarifs");
     }
@@ -28,5 +28,10 @@ class PageController extends Controller
     public function contact()
     {
         $this->render("pages/contact");
+    }
+
+    public function login()
+    {
+        $this->render("pages/login");
     }
 }
