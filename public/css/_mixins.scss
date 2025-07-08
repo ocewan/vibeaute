@@ -7,7 +7,7 @@
 @mixin header-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 20px;
   margin: 0 auto;
   max-width: 800px;
@@ -47,9 +47,8 @@
   text-decoration: none;
 
   &:hover {
-    border: none;
+    border: 2px solid $color-secondary;
     background-color: rgba($color-secondary, 0.8);
-
     transition: 0.3s ease;
   }
 }

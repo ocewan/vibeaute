@@ -1,21 +1,25 @@
 .tarifs {
+  margin-top: 120px;
 
-    .tarifs-header {
+  .tarifs-header {
+    @include header-text;
 
-        .tarifs-header-text {
-            @include header-text;
-
-            .rdv-btn {
-                @include button-rdv;
-            }
-        }
+    .tarifs-header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
-    .banner-container {
-        @include banner;
-
-        .banner-btn {
-            @include button-cta;
-        }
+    .header-rdv-btn {
+      @include button-rdv;
     }
+  }
+
+  .banner-container {
+    @include banner;
+
+    .banner-btn {
+      @include button-cta;
+    }
+  }
 }
