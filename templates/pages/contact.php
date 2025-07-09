@@ -10,7 +10,7 @@
         </div>
 
         <div class="contact-left">
-            <form action="/contact" method="POST">
+            <form action="/contact-submit" method="POST">
                 <label for="name">Nom/Prénom</label>
                 <input type="text" id="name" name="name" required>
 
@@ -26,6 +26,13 @@
                 <button type="submit">envoyer</button>
             </form>
         </div>
+
+        <?php if (isset($_GET['success'])): ?>
+            <p class="success">Votre message a bien été envoyé</p>
+        <?php elseif (isset($_GET['error'])): ?>
+            <p class="error">Erreur lors de l’envoi du message</p>
+        <?php endif; ?>
+
 
         <div class="contact-right">
             <img src="/img/contact.jpg" alt="Image de contact">

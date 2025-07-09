@@ -116,21 +116,19 @@
     </div>
 </section>
 
-
-
-<!-- Section instagram -->
+<!-- Section instagram dynamique -->
 <section class="instagram">
     <div class="instagram-container">
         <h4>Suivez-moi sur Instagram pour plus d'inspirations !</h4>
         <p data-anim>@vibeaute.by_virginie</p>
         <div class="instagram-img">
             <div class="scroll-container">
-                <img src="/img/insta-1.jpg" alt="Manucure rose">
-                <img src="/img/insta-2.jpg" alt="Manucure avec nail art">
-                <img src="/img/insta-3.jpg" alt="Manucure bleue">
-                <img src="/img/insta-4.jpg" alt="Manucure rose chromée">
-                <img src="/img/insta-5.jpg" alt="Manucure rose fleurie">
-                <img src="/img/insta-6.jpg" alt="French manucure orange">
+                <?php $displayed = 0; ?>
+                <?php foreach ($photos as $photo): ?>
+                    <?php if ($displayed >= 6) break; ?>
+                    <img src="<?= htmlspecialchars($photo->getUrl()) ?>" alt="<?= htmlspecialchars($photo->getAlt()) ?>">
+                    <?php $displayed++; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -166,9 +164,6 @@
     </div>
 </section>
 
-
-
-
 <!-- Formulaire de contact -->
 <section class="contact">
     <div class="contact-container">
@@ -179,22 +174,28 @@
         </div>
 
         <div class="contact-left">
-            <form action="/contact" method="POST">
-                <label for="name" data-anim>Nom/Prénom</label>
+            <form action="/contact-submit" method="POST">
+                <label for="name">Nom/Prénom</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email" data-anim>Email</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="phone" data-anim>Téléphone</label>
+                <label for="phone">Téléphone</label>
                 <input type="tel" id="phone" name="phone" required>
 
-                <label for="message" data-anim>Message</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
                 <button type="submit">envoyer</button>
             </form>
         </div>
+
+        <?php if (isset($_GET['success'])): ?>
+            <p class="success">Votre message a bien été envoyé</p>
+        <?php elseif (isset($_GET['error'])): ?>
+            <p class="error">Erreur lors de l’envoi du message</p>
+        <?php endif; ?>
 
         <div class="contact-right">
             <img src="/img/contact.jpg" alt="Image de contact">

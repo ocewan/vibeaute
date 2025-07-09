@@ -9,11 +9,25 @@
         </div>
     </div>
     <div class="tarifs-container">
-        <?php foreach ($tarifs as $tarif): ?>
-            <div class="box">
-                <h3><?= htmlspecialchars($tarif->getCategory()) ?></h3>
-                <p><?= htmlspecialchars($tarif->getTitle()) ?></p>
-                <span><?= number_format($tarif->getPrice(), 2, ',', ' ') ?> €</span>
+        <?php foreach ($groupedTarifs as $category => $tarifs): ?>
+            <?php $categoryId = $tarifs[0]->getCategoryId(); ?>
+
+            <div class="tarif-column">
+                <h3 data-anim><?= htmlspecialchars($category) ?></h3>
+
+                <ul>
+                    <?php foreach ($tarifs as $tarif): ?>
+                        <li class="tarif-item">
+                            <span class="tarif-title"><?= htmlspecialchars($tarif->getTitle()) ?></span>
+                            <span class="tarif-price"> à partir de <?= number_format($tarif->getPrice(), 2, ',', ' ') ?> €</span>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <?php if ($categoryId === 1): ?>
+                    <p class="tarif-info-message">Une baby manucure est offerte pour toute prestation gel ou semi-permanent</p>
+                <?php endif; ?>
+
             </div>
         <?php endforeach; ?>
     </div>
@@ -21,10 +35,9 @@
     <div class="banner-container">
         <div class="banner">
             <h4>Une question sur les prestations ?</h4>
-            <a href="/prestastions" class="banner-btn">Voir les prestations</a>
+            <a href="/prestations" class="banner-btn">Voir les prestations</a>
         </div>
     </div>
 </section>
-
 
 <?php require_once APP_ROOT . "/templates/footer.php" ?>

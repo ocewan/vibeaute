@@ -1,24 +1,22 @@
 <?php require_once APP_ROOT . "/templates/header.php" ?>
 
 <section class="login">
-    <h2>Connexion</h2>
+    <h2>Connexion Admin</h2>
     <p>Veuillez entrer vos identifiants pour vous connecter.</p>
 
-    <form action="" class="login-form" id="login-form" method="POST">
-        <div class="pseudo-container">
-            <label for="pseudo">Pseudo</label>
-            <input type="text" autocomplete="off" id="pseudo">
+    <?php if (!empty($error)): ?>
+        <p class="error"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
+
+    <form action="/login" class="login-form" id="login-form" method="POST">
+        <div class="user-container">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="username" autocomplete="off" id="username" required>
             <span></span>
         </div>
         <div class="password-container">
             <label for="password">Mot de passe</label>
-            <input type="password" autocomplete="off" id="password">
-            <p id="progress-bar"></p>
-            <span></span>
-        </div>
-        <div class="confirm-container">
-            <label for="confirm">Confirmer le mot de passe</label>
-            <input type="password" autocomplete="off" id="confirm">
+            <input type="password" name="password" autocomplete="off" id="password" required>
             <span></span>
         </div>
 

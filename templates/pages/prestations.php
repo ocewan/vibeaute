@@ -1,6 +1,6 @@
 <?php require_once APP_ROOT . "/templates/header.php" ?>
 
-<section class="prestations">
+<section class="presta">
     <div class="prestations-header">
         <h2>Prestations</h2>
         <div class="prestations-header-text">
