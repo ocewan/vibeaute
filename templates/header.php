@@ -18,9 +18,11 @@ $reviews = $repo->getAll(); ?>
 </head>
 
 <body>
-    <div id="loader">
-        <img src="/img/logo.png" alt="Logo Vi' Beauté" class="loader-logo">
-    </div>
+    <?php if (!str_contains($_SERVER['REQUEST_URI'], '/dashboard')): ?>
+        <div id="loader">
+            <img src="/img/logo.png" alt="Logo Vi' Beauté" class="loader-logo">
+        </div>
+    <?php endif; ?>
 
     <header>
         <div class="nav-container">
