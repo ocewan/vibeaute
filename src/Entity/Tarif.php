@@ -5,10 +5,11 @@ namespace App\Entity;
 class Tarif
 {
     protected ?int $id = null;
-    protected ?string $category = null;
+    protected ?int $category_id = null;
+    protected ?string $category_name = null;
     protected ?string $title = null;
     protected ?float $price = null;
-    protected \DateTime $createdAt = null;
+    protected ?\DateTime $createdAt = null;
 
     public function getId(): ?int
     {
@@ -20,14 +21,24 @@ class Tarif
         $this->id = $id;
     }
 
-    public function getCategory(): ?string
+    public function getCategoryId(): ?int
     {
-        return $this->category;
+        return $this->category_id;
     }
 
-    public function setCategory(?string $category): void
+    public function setCategoryId(?int $category_id): void
     {
-        $this->category = $category;
+        $this->category_id = $category_id;
+    }
+
+    public function getCategoryName(): ?string
+    {
+        return $this->category_name;
+    }
+
+    public function setCategoryName(?string $category_name): void
+    {
+        $this->category_name = $category_name;
     }
 
     public function getTitle(): ?string
