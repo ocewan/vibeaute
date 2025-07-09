@@ -1,0 +1,30 @@
+.message-table {
+  @include table-style;
+
+  td {
+    padding: 1rem;
+    vertical-align: top;
+  }
+
+  form.inline-form {
+    margin-top: 0.4rem;
+
+    button {
+      @include button-rdv;
+      border: none;
+
+      &:hover {
+        background-color: darken($color-secondary, 10%);
+      }
+
+      &.delete-btn {
+        @include button-cta;
+        border: 2px solid transparent;
+
+        &:hover {
+          background: #f6caca;
+        }
+      }
+    }
+  }
+}

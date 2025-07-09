@@ -15,11 +15,64 @@
     }
   }
 
+  .tarifs-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    .tarif-column {
+      max-width: 950px;
+      width: 100%;
+      padding: 1.5rem;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .tarif-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px dashed rgba($color-text, 0.2);
+
+        .tarif-title {
+          color: $color-text;
+        }
+
+        .tarif-price {
+          font-weight: bold;
+        }
+      }
+
+      .tarif-info-message {
+        font-style: italic;
+        color: $color-border;
+      }
+    }
+  }
+
   .banner-container {
     @include banner;
 
     .banner-btn {
       @include button-cta;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tarifs {
+    .tarifs-container {
+      .tarif-column {
+        max-width: 390px;
+      }
     }
   }
 }

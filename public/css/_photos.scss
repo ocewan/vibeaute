@@ -1,0 +1,110 @@
+.photos {
+  margin-top: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .photo-upload-card {
+    border: 1px dashed $color-border;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    .custom-file {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: $color-primary;
+      font-weight: bold;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      max-width: 200px;
+      padding: 0.4rem;
+      border: 1px solid $color-border;
+      border-radius: 6px;
+    }
+
+    button {
+      background: $color-primary;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
+    }
+  }
+
+  .photo-limit-message {
+    color: #b00020;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .photo-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .delete-form {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+
+      .delete-btn {
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        font-size: 1rem;
+        line-height: 1;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+          background: $color-secondary;
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
+}

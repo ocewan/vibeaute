@@ -128,3 +128,25 @@
     }
   }
 }
+
+@mixin table-style($max-width: 1200px) {
+  width: 100%;
+  max-width: $max-width;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  thead {
+    background: $color-section;
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
+
+  tbody tr {
+    border-top: 1px solid $color-border;
+  }
+}
